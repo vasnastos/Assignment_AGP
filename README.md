@@ -6,5 +6,5 @@
 * Ενδεικτική επίλυση τέταρτου ερωτήματος:[4ο ερώτημα](4.Calculate_If_Statement/if_statements.py)
 * Υποδείγμα φακέλου με αρχεία σε C++
 * Επίλυση με plotting:[plotting example](File_Detector/OS_WALK_PLOTTING)
-> [Παράδειγμα ανοίγματος αρχείου c++](File_Detector/OS_WALK/open_cpp.py)
+> [Παράδειγμα ανοίγματος αρχείου c++](File_Detector/OS_WALK/open_cpp.py)<br>
 > [Εμφάνιση αρχείων με χρήση αναδρομής](File_Detector/OS_WALK/temp_walk.py)
