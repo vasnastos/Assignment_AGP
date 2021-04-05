@@ -3,6 +3,7 @@ import os
 parentroot='../../oop-master'
 
 def file_parser():
+    print(os.getcwd())
     allfiles=[]
     try:
         for path,_,file in os.walk(top=parentroot,topdown=True):
