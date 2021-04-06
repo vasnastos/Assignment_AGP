@@ -1,8 +1,6 @@
 # 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού<a href="https://chgogos.github.io/dituoi_agp/resources/agp_assignment20210329.pdf"><img width="20px" height="20px" src="https://www.freeiconspng.com/thumbs/information-icon/information-icon-clip-art-at-clker-com-vector-clip-art-online--32.png"></a>
 ![Regex image](https://www.oreilly.com/content/wp-content/uploads/sites/2/2019/06/email-regex_crop-ae942dc427c8cebd3a83c52d17389123.jpg)
 
-## GIT VERSION CONTROL
-
 ## ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ
 1. Άνοιγμα και περιήγηση στον φάκελο oop-master 
     * Φάκελος oop-master:[oop-master](https://github.com/chgogos/oop/archive/refs/heads/master.zip)
@@ -39,3 +37,7 @@
 5. Πλήθος Εντολών if με συνθήκη ισότητας
 6. For Loops με μέγεθος 12 χαρακτήρες
 7. Εύρεση 3 κοινών ονομάτων μεταβλητών
+
+
+## GIT VERSION CONTROL
+<iframe width="100%" height="615" src="https://www.youtube.com/embed/RGOj5yH7evk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
