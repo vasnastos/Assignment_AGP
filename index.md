@@ -1,4 +1,4 @@
-# 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού[:sos:](https://github.com/chgogos/dituoi_agp/blob/main/resources/agp_assignment20210329.pdf)
+# 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού[![:sos:]()](https://github.com/chgogos/dituoi_agp/blob/main/resources/agp_assignment20210329.pdf)
 ![Regex image](https://www.oreilly.com/content/wp-content/uploads/sites/2/2019/06/email-regex_crop-ae942dc427c8cebd3a83c52d17389123.jpg)
 
 ## ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ
