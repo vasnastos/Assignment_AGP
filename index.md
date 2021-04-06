@@ -21,6 +21,18 @@
         
        ```
     * Κώδικας με χρήση αναδρομικής συνάρτησης για εύρεση όλων των αρχείων από τον φάκελο oop-master
+        ```
+        
+         def print_Dirs(masterpath):
+            global pathfiles
+            files=os.listdir(masterpath)
+            for x in files:
+                if os.path.isdir(masterpath+'/'+x):
+                    print_Dirs(masterpath+'/'+x)
+                else:
+                    pathfiles.append(masterpath+'//'+x)
+        
+        ```
 2. Εύρεση αρχείων .c,.cpp,.h,.hpp
 3. Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων
 4. Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)
