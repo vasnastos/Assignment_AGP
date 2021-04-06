@@ -1,12 +1,9 @@
 # 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού<a href="https://chgogos.github.io/dituoi_agp/resources/agp_assignment20210329.pdf"><img width="20px" height="20px" src="https://www.freeiconspng.com/thumbs/information-icon/information-icon-clip-art-at-clker-com-vector-clip-art-online--32.png"></a>
 ![Regex image](https://www.oreilly.com/content/wp-content/uploads/sites/2/2019/06/email-regex_crop-ae942dc427c8cebd3a83c52d17389123.jpg)
-<hr>
 
 ## GIT VERSION CONTROL
-<iframe width="100%" height="512px" src="https://www.youtube.com/embed/RGOj5yH7evk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ
-<hr>
 1. Άνοιγμα και περιήγηση στον φάκελο oop-master 
     * Φάκελος oop-master:[oop-master](https://github.com/chgogos/oop/archive/refs/heads/master.zip)
     * Εύρεση αρχείων από φάκελο και υποφακέλους με χρήση os.walk 
