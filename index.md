@@ -1,4 +1,4 @@
-# 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών ΠρογραμματισμούQ<a href=https://github.com/chgogos/dituoi_agp/blob/main/resources/agp_assignment20210329.pdf"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Red_information_icon_with_gradient_background.svg/768px-Red_information_icon_with_gradient_background.svg.png" width="20px" height="20px"></a>
+# 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών ΠρογραμματισμούQ<a href="https://github.com/chgogos/dituoi_agp/blob/main/resources/agp_assignment20210329.pdf"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Red_information_icon_with_gradient_background.svg/768px-Red_information_icon_with_gradient_background.svg.png" width="20px" height="20px"></a>
 
 ## ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ
 1. Άνοιγμα και περιήγηση στον φάκελο oop-master 
