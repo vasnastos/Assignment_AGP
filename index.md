@@ -1,4 +1,4 @@
-# 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού<a href="https://chgogos.github.io/dituoi_agp/resources/agp_assignment20210329.pdf"><img width="20px" height="20px" src="https://www.freeiconspng.com/thumbs/information-icon/information-icon-clip-art-at-clker-com-vector-clip-art-online--32.png"></a>
+# 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού[![info.png](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Red_information_icon_with_gradient_background.svg/768px-Red_information_icon_with_gradient_background.svg.png)](https://github.com/chgogos/dituoi_agp/blob/main/resources/agp_assignment20210329.pdf)
 ![Regex image](https://www.oreilly.com/content/wp-content/uploads/sites/2/2019/06/email-regex_crop-ae942dc427c8cebd3a83c52d17389123.jpg)
 
 ## ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ
