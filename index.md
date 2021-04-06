@@ -10,24 +10,23 @@
 1. Άνοιγμα και περιήγηση στον φάκελο oop-master 
     *  Φάκελος oop-master:[oop-master](https://github.com/chgogos/oop/archive/refs/heads/master.zip)
     * Εύρεση αρχείων από φάκελο και υποφακέλους με χρήση os.walk
-     ``` 
+        ``` 
        
-       def file_parser():
-               print(os.getcwd())
-               allfiles=[]
-               try:
-                  for path,_,file in os.walk(top=parentroot,topdown=True):
-                     allfiles+=[path+'/'+l for l in file if l.endswith('.cpp') or l.endswith('.c') or l.endswith('.hpp') or l.endswith('.h')]
-               except:
-                   print('Can not open folder oop-master')
-                   return list([])
-               return allfiles
+            def file_parser():
+                  print(os.getcwd())
+                  allfiles=[]
+                  try:
+                     for path,_,file in os.walk(top=parentroot,topdown=True):
+                         allfiles+=[path+'/'+l for l in file if l.endswith('.cpp') or l.endswith('.c') or l.endswith('.hpp') or l.endswith('.h')]
+                   except:
+                      print('Can not open folder oop-master')
+                      return list([])
+                  return allfiles
        
-     ```
      <br>  
      * Κώδικας με χρήση αναδρομικής συνάρτησης για εύρεση όλων των αρχείων από τον φάκελο oop-master
-      ```
-        
+     ```
+     
         pathfiles=[]
         def print_Dirs(masterpath):
             global pathfiles
@@ -38,7 +37,6 @@
                 else:
                     pathfiles.append(masterpath+'//'+x)
                     
-       ```
   <br>
 2. Εύρεση αρχείων .c,.cpp,.h,.hpp
 3. Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων
