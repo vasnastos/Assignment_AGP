@@ -35,6 +35,7 @@
 3. Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br>
 4. Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)<br>
 5. Πλήθος Εντολών if με συνθήκη ισότητας<>
+      * Source Code:[code](https://github.com/vasnastos/Assignment_AGP/tree/master/5.for_loops)
       ```
          def equality_statements():
              counter=0
@@ -55,6 +56,7 @@
              print('\n\n')
              return len(fls)
       ```
+      
 <br>
 6. For Loops με μέγεθος 12 χαρακτήρες
 7. Εύρεση 3 κοινών ονομάτων μεταβλητών
