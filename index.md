@@ -30,10 +30,32 @@
                     pathfiles.append(masterpath+'//'+x)
         
         ```
-2. Εύρεση αρχείων .c,.cpp,.h,.hpp
-3. Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων
-4. Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)
-5. Πλήθος Εντολών if με συνθήκη ισότητας
+        <br>
+2. Εύρεση αρχείων .c,.cpp,.h,.hpp<br>
+3. Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br>
+4. Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)<br>
+5. Πλήθος Εντολών if με συνθήκη ισότητας<>
+      ```
+         def equality_statements():
+             counter=0
+             fls=[]
+             pattern=re.compile('if\s*\(.+==.+\)$')
+             for x in files:
+                 with open(x,'r',encoding='utf-8',errors='ignore') as f:
+                     #counter+=len([m for m in f if(r.match('.*if(.+==.+).*',m))])
+                     for k in f:
+                         fls+=pattern.findall(k)
+             tm.cprint('\t If equality Statements found','blue')
+             tm.cprint('==='*30,'red')
+             id=1
+             for k in fls:
+                 k=k.replace(' ','').replace('\t','')
+                 tm.cprint(str(id)+'.'+str(k),'green')
+                 id+=1
+             print('\n\n')
+             return len(fls)
+      ```
+<br>
 6. For Loops με μέγεθος 12 χαρακτήρες
 7. Εύρεση 3 κοινών ονομάτων μεταβλητών
 
