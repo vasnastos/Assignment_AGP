@@ -3,7 +3,7 @@
 ## ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ
 1. Άνοιγμα και περιήγηση στον φάκελο oop-master 
     * Φάκελος oop-master:[oop-master](https://github.com/chgogos/oop/archive/refs/heads/master.zip)
-    * Εύρεση αρχείων από φάκελο και υποφακέλους με χρήση os.walk 
+    * Εύρεση αρχείων από φάκελο και υποφακέλους με χρήση os.walk:[code](https://github.com/vasnastos/Assignment_AGP/blob/master/file_walk.py)
        ```
          def file_parser():
              print(os.getcwd())
@@ -17,7 +17,7 @@
              return allfiles
         
        ```
-    * Κώδικας με χρήση αναδρομικής συνάρτησης για εύρεση όλων των αρχείων από τον φάκελο oop-master
+    * Κώδικας με χρήση αναδρομικής συνάρτησης για εύρεση όλων των αρχείων από τον φάκελο oop-master:[code](https://github.com/vasnastos/Assignment_AGP/tree/master/File_Detector)
         ```
         
          def print_Dirs(masterpath):
@@ -34,8 +34,8 @@
 2. Εύρεση αρχείων .c,.cpp,.h,.hpp<br>
 3. Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br>
 4. Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)<br>
-5. Πλήθος Εντολών if με συνθήκη ισότητας<>
-      * Source Code:[code](https://github.com/vasnastos/Assignment_AGP/tree/master/5.for_loops)
+5. Πλήθος Εντολών if με συνθήκη ισότητας
+      * Source Code:[code](https://github.com/vasnastos/Assignment_AGP/tree/master/4.Calculate_If_Statement)
       ```
          def equality_statements():
              counter=0
@@ -58,7 +58,7 @@
       ```
       
 <br>
-6. For Loops με μέγεθος 12 χαρακτήρες
+6. For Loops με μέγεθος 12 χαρακτήρες<br>
 7. Εύρεση 3 κοινών ονομάτων μεταβλητών
 
 
