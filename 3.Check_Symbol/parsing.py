@@ -21,7 +21,7 @@ def Symbols_letters_Digits():
     
     for x in lines:
        actualsd=x.replace(' ','').replace('\n','')
-       #actualid=x.replace(' ',').strip()
+       #actualid=x.strip()
        chars=len(patternC.findall(actualsd))
        digits=len(patternD.findall(actualsd))
        parser['characters']+=chars
