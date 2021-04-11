@@ -20,6 +20,7 @@ def equality_statements():
     id=1
     for k in fls:
         k=k.replace(' ','').replace('\t','')
+        #k=k.strip()
         tm.cprint(str(id)+'.'+str(k),'green')
         id+=1
     print('\n\n')
