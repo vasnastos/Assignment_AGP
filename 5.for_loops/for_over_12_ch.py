@@ -23,7 +23,7 @@ def over_12_characters():
                    if len(current.replace(' ',''))>=12:
                          found+=1
                         
-               tm.cprint(k,'green') if fnd==1 and 'for' in k else tm.cprint(k,'red') if 'for' in k else print('',end='')
+               tm.cprint(k,'green') if fnd==1 and 'for' in k else tm.cprint(k,'red') if 'for' in k else print(end='')
     
     print(f'for loops with over 12 characters:{found}')
    
