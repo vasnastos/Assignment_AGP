@@ -95,33 +95,106 @@
     <ul>
       <li>Source Code:<a href="https://github.com/vasnastos/Assignment_AGP/tree/master/4.Calculate_If_Statement">code</a>
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> def equality_statements():
-     counter=0
-     fls=[]
-     pattern=re.compile('if\s*\(.+==.+\)$')
-     for x in files:
-         with open(x,'r',encoding='utf-8',errors='ignore') as f:
-             #counter+=len([m for m in f if(r.match('.*if(.+==.+).*',m))])
-             for k in f:
-                 fls+=pattern.findall(k)
-     tm.cprint('\t If equality Statements found','blue')
-     tm.cprint('==='*30,'red')
-     id=1
-     for k in fls:
-         k=k.replace(' ','').replace('\t','')
-         tm.cprint(str(id)+'.'+str(k),'green')
-         id+=1
-     print('\n\n')
-     return len(fls)
+    def equality_statements():
+    counter=0
+    fls=[]
+    pattern=re.compile('\s+if\s*\(\s*.+\s*==\s*.+\)')
+    for x in files:
+        with open(x,'r',encoding='utf-8',errors='ignore') as f:
+            #counter+=len([m for m in f if(r.match('.*if(.+==.+).*',m))])
+            for k in f:
+                fls+=pattern.findall(k)
+    tm.cprint('\t If equality Statements found','blue')
+    tm.cprint('==='*30,'red')
+    id=1
+    for k in fls:
+        k=k.replace(' ','').replace('\t','')
+        #k=k.strip()
+        tm.cprint(str(id)+'.'+str(k),'green')
+        id+=1
+    print('\n\n')
+    return len(fls) 
 </code></pre></div>        </div>
       </li>
     </ul>
   </li>
   <li>For Loops με μέγεθος 12 χαρακτήρες<br /></li>
    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     
-   </code></pre></div>     
+     import sys
+sys.path.append('..')
+import file_walk as fw 
+import re
+import os
+import termcolor as tm
+
+#Χρήση custom module file_walk:[https://github.com/vasnastos/Assignment_AGP/blob/master/file_walk.py]
+#Απαραίτητος ο φάκελος oop-master
+files=fw.file_parser()
+
+def over_12_characters():
+    found=0
+    print(len(files))
+    #for regex
+    pattern=re.compile('\s*for\s*\(\s*.*\s*;\s*.*\s*;\s*.*\s*\)|\s*for\s*\(\s*.+[:]\s*.+\s*\)')
+    for x in files:
+        with open(x,'r',encoding='ISO-8859-1') as f:
+           for k in f:
+               for l in pattern.findall(k):
+                   tm.cprint(l,'red')
+                   current=l[int(l.find('('))+1:len(l)-1]
+                   if len(current.replace(' ',''))>=12:
+                         tm.cprint(current,'green')
+                         found+=1
+                   print('')
+    print(f'for loops with over 12 characters:{found}')
+
+#Test σε αρχείο sample.cpp
+def tester():
+    found=0
+    pattern=re.compile('for\s*\(.+;.+;.+\)|for\s*\(.+[:].+\)')
+    with open("sample.cpp",'r',encoding='utf-8') as L:
+        for x in L:
+            for l in pattern.findall(x):
+                   tm.cprint(l,'red')
+                   current=l[int(l.find('for('))+4:len(l)-1]
+                   if len(current.replace(' ',''))>=12:
+                         tm.cprint(current,'green')
+                         found+=1
+                   print('')
+    print(f'for loops with over 12 characters:{found}')
+
+#Περίπτωση με εύρεση kαι inline εντολών for
+#split based for
+def tester1():
+    found=0
+    pattern=re.compile('\(.+;.+;.+\)|\(.+[:].+\)')
+    with open('sample.cpp','r') as f:
+        for x in f:
+            data=[]
+            if 'for' in x:
+                data=x.split('for')
+            if len(data)==0:
+                continue
+            for k in data:
+               if pattern.match(k):
+                   tm.cprint(k,'red')
+                   for m in pattern.findall(k):
+                       fixed=m[m.find('(')+1:len(m)-1]
+                       fixed=fixed.strip().replace(' ','')
+                       if len(fixed)>=12:
+                           tm.cprint(len(fixed),'yellow')
+                           tm.cprint(fixed,'green')
+                           found+=1
+               tm.cprint('============================================================','white') 
+        tm.cprint(f'Matches Found:{found}','blue')
+
+over_12_characters()
+#tester()
+#tester1()
+   </code></pre></div>     </div>
   <li>Εύρεση 3 κοινών ονομάτων μεταβλητών</li>
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     
-   </code></pre></div>
+   </code></pre></div>   </div>
 </ol>
 
 <h2 id="git-version-control">GIT VERSION CONTROL</h2>
