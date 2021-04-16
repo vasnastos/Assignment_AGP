@@ -1,7 +1,8 @@
+import sys
+sys.path.append('..')
 import file_walk as fw
 import re 
 import termcolor as tm
-
 
 files=fw.file_parser()
 tm.cprint('\t\tFiles found:'+str(len(files)),'green')
@@ -9,7 +10,7 @@ tm.cprint('\t\tFiles found:'+str(len(files)),'green')
 def equality_statements():
     counter=0
     fls=[]
-    pattern=re.compile('if\s*\(.+==.+\)$')
+    pattern=re.compile('\s+if\s*\(\s*.+\s*==\s*.+\)')
     for x in files:
         with open(x,'r',encoding='utf-8',errors='ignore') as f:
             #counter+=len([m for m in f if(r.match('.*if(.+==.+).*',m))])
@@ -20,6 +21,7 @@ def equality_statements():
     id=1
     for k in fls:
         k=k.replace(' ','').replace('\t','')
+        #k=k.strip()
         tm.cprint(str(id)+'.'+str(k),'green')
         id+=1
     print('\n\n')

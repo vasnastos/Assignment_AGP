@@ -1,6 +1,6 @@
 import os
 filepath='../oop-master/lc/final.cpp'
-y=open(filepath,'r')
+y=open(filepath,'r',encoding='utf8')
 for x in y:
     print(x)
 y.close()
