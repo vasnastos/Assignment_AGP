@@ -2,31 +2,21 @@ import os
 import re
 from time import time
 
-<<<<<<< HEAD
 parentroot='../../REPOSITORIES/oop-master'
 
 def file_parser():
-=======
-parentroot='../oop-master'
-
-def file_parser():
     starttime=time()
->>>>>>> 4dd18feebcf5048df33754c6584a54a17aa2c6fb
     allfiles=[]
     try:
         for path,_,file in os.walk(top=parentroot,topdown=True):
             allfiles+=[path+'/'+l for l in file if l.endswith('.cpp') or l.endswith('.c') or l.endswith('.hpp') or l.endswith('.h')]
-<<<<<<< HEAD
-    except:
-=======
     except Exception:
->>>>>>> 4dd18feebcf5048df33754c6584a54a17aa2c6fb
         print('Can not open folder oop-master')
         return list([])
     print('Elapsed Time for file opening:'+str(time()-starttime)+' s')
     return allfiles
 
-<<<<<<< HEAD
+
 
 """
 [
@@ -34,7 +24,6 @@ def file_parser():
 ('oop-master/ch1')
 ]
 """
-=======
 files=file_parser()
 
 
@@ -79,10 +68,6 @@ def for_loops_over_12_chars():
            pass
 
   
-filesbycategory()
-print('=='*30)
-codelines()
-print('=='*30)
 
 
->>>>>>> 4dd18feebcf5048df33754c6584a54a17aa2c6fb
+

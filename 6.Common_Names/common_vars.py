@@ -14,7 +14,7 @@ def CommonVars():
         with open(x,'r',encoding='utf8',errors='ignore') as f:
             lines=f.readlines()
             for k in lines:
-                if re.search('.*\s*int[\t]\s*\w+(;$|=\.w;.*)',k):
+                if re.search('.*\s*int[\t]\s*\w+(;$|=\.w\s*;.*)',k):
                     print(k)
                     if k.startswith('//'): 
                         continue
