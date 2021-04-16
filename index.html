@@ -85,12 +85,37 @@
     </ul>
   </li>
   <li>Εύρεση αρχείων .c,.cpp,.h,.hpp<br /></li>
-   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     
+   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+   def filesbycategory():
+    counter={'cpp':0,'hpp':0,'h':0,'c':0}
+    starttime=time()
+    for x in files:
+        if re.match('.+\.cpp$',x): 
+            #if x.endswith('.cpp'):
+            counter['cpp']+=1
+        elif x.endswith('.hpp'):
+            counter['hpp']+=1
+        elif x.endswith('.h'):
+            counter['h']+=1
+        else:
+            counter['c']+=1
+    
+    for key in counter:
+        print(str(key)+'-->'+str(counter[key]))
+    endtime=time()
+    print('Lapsed Time:'+str(endtime-starttime)+' s')
    </code></pre></div>
+     <br>
+     <img src="" width="100%" height="50%">
   <li>Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br /></li>
   <li>Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)<br /></li>
-   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     
+   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+     
    </code></pre></div>
+     <br>
+     <h2>ΑΠΟΤΕΛΕΣΜΑΤΑ</h2>
+     <img src="" width="100%" height="50%">
+     <br><br>
   <li>Πλήθος Εντολών if με συνθήκη ισότητας
     <ul>
       <li>Source Code:<a href="https://github.com/vasnastos/Assignment_AGP/tree/master/4.Calculate_If_Statement">code</a>
