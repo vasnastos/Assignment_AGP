@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <map>
-<<<<<<< HEAD
 #include <algorithm>
 
 void nums(int k)
@@ -49,14 +48,6 @@ int main()
     std::for_each(v.begin(),v.end(),[](int &k) {k+=1;});
     std::cout<<v[3]<<std::endl;
     nums(10);
-=======
-#include <fstream>
-#include <ostream>
-#include <iterator>
-#include <algorithm>
-
-int main()
-{
     std::vector <int> v{1,2,3,4,5,6,7,8,9,10};
     std::ostream_iterator <int> out=std::ostream_iterator <int>(std::cout,"\t");
     std::copy(v.begin(),v.end(),out);
@@ -108,6 +99,5 @@ int main()
     {
         std::cout<<c<<std::endl;
     }
->>>>>>> 4dd18feebcf5048df33754c6584a54a17aa2c6fb
     return 0;
 }
