@@ -26,6 +26,7 @@ def Symbols_letters_Digits():
         print('No input Data!!!Please Check you file Data')
         return
     
+<<<<<<< HEAD
     start_time=time()
 
     for x in files:
@@ -43,6 +44,16 @@ def Symbols_letters_Digits():
         tm.cprint(f'{x}-->{parser[x]}','green')
     tm.cprint('=='*30,'red')
     tm.cprint(f'Lapsed Time:{end_time-start_time} \'s','red')
+=======
+    for x in lines:
+       actualsd=x.replace(' ','').replace('\n','')
+       #actualid=x.strip()
+       chars=len(patternC.findall(actualsd))
+       digits=len(patternD.findall(actualsd))
+       parser['characters']+=chars
+       parser['digits']+=digits
+       parser['symbols']+=len(actualsd)-(chars+digits)
+>>>>>>> 4dd18feebcf5048df33754c6584a54a17aa2c6fb
     
 
 Symbols_letters_Digits()
