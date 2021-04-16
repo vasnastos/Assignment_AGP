@@ -1,64 +1,130 @@
-# 2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού<a href="https://github.com/chgogos/dituoi_agp/blob/main/resources/agp_assignment20210329.pdf"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Red_information_icon_with_gradient_background.svg/768px-Red_information_icon_with_gradient_background.svg.png" width="20px" height="20px"></a>
-<br><br>
-## ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ
-1. Άνοιγμα και περιήγηση στον φάκελο oop-master 
-    * Φάκελος oop-master:[oop-master](https://github.com/chgogos/oop/archive/refs/heads/master.zip)
-    * Εύρεση αρχείων από φάκελο και υποφακέλους με χρήση os.walk:[code](https://github.com/vasnastos/Assignment_AGP/blob/master/file_walk.py)
-       ```
-         def file_parser():
-             print(os.getcwd())
-             allfiles=[]
-            try:
-                for path,_,file in os.walk(top=parentroot,topdown=True):
-                      allfiles+=[path+'/'+l for l in file if l.endswith('.cpp') or l.endswith('.c') or l.endswith('.hpp') or l.endswith('.h')]
-            except:
-                  print('Can not open folder oop-master')
-                  return list([])
-             return allfiles
-        
-       ```
-    * Κώδικας με χρήση αναδρομικής συνάρτησης για εύρεση όλων των αρχείων από τον φάκελο oop-master:[code](https://github.com/vasnastos/Assignment_AGP/tree/master/File_Detector)
-        ```
-        
-         def print_Dirs(masterpath):
-            global pathfiles
-            files=os.listdir(masterpath)
-            for x in files:
-                if os.path.isdir(masterpath+'/'+x):
-                    print_Dirs(masterpath+'/'+x)
-                else:
-                    pathfiles.append(masterpath+'//'+x)
-        
-        ```
-        <br>
-2. Εύρεση αρχείων .c,.cpp,.h,.hpp<br>
-3. Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br>
-4. Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)<br>
-5. Πλήθος Εντολών if με συνθήκη ισότητας
-      * Source Code:[code](https://github.com/vasnastos/Assignment_AGP/tree/master/4.Calculate_If_Statement)
-      ```
-         def equality_statements():
-             counter=0
-             fls=[]
-             pattern=re.compile('if\s*\(.+==.+\)$')
-             for x in files:
-                 with open(x,'r',encoding='utf-8',errors='ignore') as f:
-                     #counter+=len([m for m in f if(r.match('.*if(.+==.+).*',m))])
-                     for k in f:
-                         fls+=pattern.findall(k)
-             tm.cprint('\t If equality Statements found','blue')
-             tm.cprint('==='*30,'red')
-             id=1
-             for k in fls:
-                 k=k.replace(' ','').replace('\t','')
-                 tm.cprint(str(id)+'.'+str(k),'green')
-                 id+=1
-             print('\n\n')
-             return len(fls)
-      ```
-6. For Loops με μέγεθος 12 χαρακτήρες<br>
-7. Εύρεση 3 κοινών ονομάτων μεταβλητών
 
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-## GIT VERSION CONTROL
-<iframe width="100%" height="615" src="https://www.youtube.com/embed/RGOj5yH7evk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού | Assignment_AGP</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://vasnastos.github.io/Assignment_AGP/" />
+<meta property="og:url" content="https://vasnastos.github.io/Assignment_AGP/" />
+<meta property="og:site_name" content="Assignment_AGP" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού" />
+<script type="application/ld+json">
+{"url":"https://vasnastos.github.io/Assignment_AGP/","@type":"WebSite","headline":"2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού","name":"Assignment_AGP","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/Assignment_AGP/assets/css/style.css?v=7d1ce5f1eff6f9057c417c68ca31280c5015cd4d">
+    <script src="/Assignment_AGP/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Assignment_AGP</h1>
+        <p class="header"></p>
+
+        <ul>
+          
+          <li><a class="buttons github" href="https://github.com/vasnastos/Assignment_AGP">View On GitHub</a></li>
+          <li><a class="buttons github" href="">Download Zip</a></li>
+        </ul>
+
+        
+          <p class="header">This project is maintained by <a class="header name" href="https://github.com/vasnastos">vasnastos</a></p>
+        
+
+        
+      </header>
+
+      <section>
+        <h1 id="2η-εργαστηριακή-άσκηση-αρχές-γλωσσών-προγραμματισμού">2η Εργαστηριακή Άσκηση Αρχές Γλωσσών Προγραμματισμού<a href="https://github.com/chgogos/dituoi_agp/blob/main/resources/agp_assignment20210329.pdf"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Red_information_icon_with_gradient_background.svg/768px-Red_information_icon_with_gradient_background.svg.png" width="20px" height="20px" /></a></h1>
+<p><br /><br /></p>
+<h2 id="ζητουμενα-εργασιασ">ΖΗΤΟΥΜΕΝΑ ΕΡΓΑΣΙΑΣ</h2>
+<ol>
+  <li>Άνοιγμα και περιήγηση στον φάκελο oop-master
+    <ul>
+      <li>Φάκελος oop-master:<a href="https://github.com/chgogos/oop/archive/refs/heads/master.zip">oop-master</a></li>
+      <li>Εύρεση αρχείων από φάκελο και υποφακέλους με χρήση os.walk:<a href="https://github.com/vasnastos/Assignment_AGP/blob/master/file_walk.py">code</a>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   def file_parser():
+       print(os.getcwd())
+       allfiles=[]
+      try:
+          for path,_,file in os.walk(top=parentroot,topdown=True):
+                allfiles+=[path+'/'+l for l in file if l.endswith('.cpp') or l.endswith('.c') or l.endswith('.hpp') or l.endswith('.h')]
+      except:
+            print('Can not open folder oop-master')
+            return list([])
+       return allfiles
+        
+</code></pre></div>        </div>
+      </li>
+      <li>Κώδικας με χρήση αναδρομικής συνάρτησης για εύρεση όλων των αρχείων από τον φάκελο oop-master:<a href="https://github.com/vasnastos/Assignment_AGP/tree/master/File_Detector">code</a>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        
+   def print_Dirs(masterpath):
+      global pathfiles
+      files=os.listdir(masterpath)
+      for x in files:
+          if os.path.isdir(masterpath+'/'+x):
+              print_Dirs(masterpath+'/'+x)
+          else:
+              pathfiles.append(masterpath+'//'+x)
+        
+</code></pre></div>        </div>
+        <p><br /></p>
+      </li>
+    </ul>
+  </li>
+  <li>Εύρεση αρχείων .c,.cpp,.h,.hpp<br /></li>
+  <li>Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br /></li>
+  <li>Εύρεση όλων των γραμμών κώδικα(εκτός κενών γραμμών)<br /></li>
+  <li>Πλήθος Εντολών if με συνθήκη ισότητας
+    <ul>
+      <li>Source Code:<a href="https://github.com/vasnastos/Assignment_AGP/tree/master/4.Calculate_If_Statement">code</a>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> def equality_statements():
+     counter=0
+     fls=[]
+     pattern=re.compile('if\s*\(.+==.+\)$')
+     for x in files:
+         with open(x,'r',encoding='utf-8',errors='ignore') as f:
+             #counter+=len([m for m in f if(r.match('.*if(.+==.+).*',m))])
+             for k in f:
+                 fls+=pattern.findall(k)
+     tm.cprint('\t If equality Statements found','blue')
+     tm.cprint('==='*30,'red')
+     id=1
+     for k in fls:
+         k=k.replace(' ','').replace('\t','')
+         tm.cprint(str(id)+'.'+str(k),'green')
+         id+=1
+     print('\n\n')
+     return len(fls)
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>For Loops με μέγεθος 12 χαρακτήρες<br /></li>
+  <li>Εύρεση 3 κοινών ονομάτων μεταβλητών</li>
+</ol>
+
+<h2 id="git-version-control">GIT VERSION CONTROL</h2>
+<iframe width="100%" height="615" src="https://www.youtube.com/embed/RGOj5yH7evk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
