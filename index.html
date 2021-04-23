@@ -245,26 +245,32 @@ over_12_characters()
    </code></pre></div>     </div>
   <li>Εύρεση 3 κοινών ονομάτων μεταβλητών</li>
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-         #Εύρεση όλων των ακέραιων μεταβλητών
-def commonvars():
-    vars={}
-    #Τρια Μοτίβα μεταβλητών
-    #int a;-->int\s+\w+;
-    #int a=10;-->int\s+\w+\s*([=]\s*\w+\s*)+;
-    #int a,b,c;-->int\s+\w+\s*([,]\s*\w+\s*)*;
-    #Μη αποδεκτό-->const int a=10;
-   
-   #(int\s+\w+\s*([,]\s*\w+\s*)*[;]|\s*int\s+\w+\s*([=]\s*\w+\s*)+[;])
-    patternf=re.compile('(int\s+\w+\s*([,]\s*\w+\s*)*[;]|\s*int\s+\w+\s*([=]\s*\w+\s*)+[;])')
-    constpattern=re.compile('(const\s+int\s*\w+\s*([=]\s*\w+\s*)+[;])')
+  def CommonVars():
+    commonvars=dict({})
+    #Pattern for variables 
+    unacceptable=re.compile('const\s+int\s+\w+\s*[=]\s*\w+\s*[;]')
+    pattern=re.compile('\s*int\s+\w+[;]')
+    patternA=re.compile('(\s*int\s+\w+([,]\w+)*[;])')
+    patternB=re.compile('\s*int\s+\w+=\w+[;]')
+    matches=[]
     for x in files:
-        with open(x,'r',encoding='utf-8',errors='ignore') as L:
-            for k in L:
-                cleanconst=k
-                for l in constpattern.findall(k):
-                    cleanconst=k.replace(l[0],'')
-                for t in patternf.findall(cleanconst):
-                    tm.cprint('Variable:'+str(t),'green')
+        with open(x,'r',encoding='utf8',errors='ignore') as f:
+            lines=f.readlines()
+            for k in lines:
+                word=k
+                if word.startswith('//') or word.startswith('#'):
+                    continue
+
+                for l in unacceptable.finditer(k):
+                    word=k[0:l.start()]+k[l.end():]
+
+                for n1 in pattern.findall(word):
+                    print(n1)
+                for n2 in [l[0] for l in patternA.findall(word)]:
+                    print(n2)
+                for n3 in patternB.findall(k):
+                    print(n3)            
+
    </code></pre></div>   </div>
      <br>
      <h2>ΑΠΟΤΕΛΕΣΜΑΤΑ</h2>
