@@ -115,7 +115,49 @@
      <h2>ΑΠΟΤΕΛΕΣΜΑΤΑ</h2>
      <img src="Images/1.png" width="100%" height="50%"><br><br>
   <li>Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br /></li>
-     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+     <div class="language-plaintext highlighter-rouge">
+      def Symbols_letters_Digits():
+    parser={'characters':0,'digits':0,'symbols':0}
+    patternC=re.compile('[A-Za-z]')
+    #\w
+    patternD=re.compile('\d')
+    if len(files)==0:
+        print('No input Data!!!Please Check you file Data')
+        return
+
+    start_time=time()
+
+    for x in files:
+      with open(x,'r',encoding="utf-8",errors='ignore') as f: 
+        for k in f:
+            """
+            f.readline()
+            while f.readline()!=None:
+            """
+            #actualsd=k.replace(' ','').replace('\n','')
+            #actualsd=actualsd.strip()
+            chars=len(patternC.findall(k))
+            digits=len(patternD.findall(k))
+            """
+               for ch in k:#Προσπέλαση χαρακτήρων αλφαριθμητικού
+                   if ch.isalpha():
+                       parser['characters']+=1
+                   elif ch.isdigit():
+                       parser[digits']+=1
+                   else:
+                       parser['symbols']+=1
+                       #parser.update('characters',parser['characters']+1)
+                print(parser)
+            """ 
+            parser['characters']+=chars
+            parser['digits']+=digits
+            parser['symbols']+=len(k)-(chars+digits)
+    end_time=time()
+    for x in parser:
+        tm.cprint(f'{x}-->{parser[x]}','green')
+    tm.cprint('=='*30,'red')
+    tm.cprint(f'Lapsed Time:{end_time-start_time} \'s','red')
+       <div class="highlight"><pre class="highlight"><code> 
      </code></pre></div>    </div>
      <br>
      <h2>ΑΠΟΤΕΛΕΣΜΑΤΑ</h2>
@@ -144,34 +186,37 @@
     def equality_statements():
     counter=0
     fls=[]
-    pattern=re.compile('\s+if\s*\(\s*.+\s*==\s*.+\)|^if\s*\(.+==.+\)|.*if\s*\(\s*\w+\s*\)')
-    patternB=re.compile("\s*if\s*\(\s*\w+\s*\)")
+    pattern=re.compile('\s+if\s*\(\s*.+\s*==\s*.+\)|^if\s*\(.+==.+\)|\s*if\s*\(\s*\w+\s*\)')
+    #if(x==5)-->NAI
+    #check=true;
+    #if(check)-->check==true
+    #if(1)
+    #std::count_if(v.begin(),v.end(),[](int &l) {return l==5})
+    #patternB=re.compile("\s*if\s*\(\s*\w+\s*\)")
     #|if\s*\(\s*(\w|\d)+\s*\)
     #if\s*\(\s*(\w|\d)+\s*\)-->if(k) αν k είναι boolean μεταβλητή η ένας αριθμός
     for x in files:
         with open(x,'r',encoding='utf-8',errors='ignore') as f:
             #counter+=len([m for m in f if(r.match('.*if(.+==.+).*',m))])
             for k in f:
-                print(patternB.findall(k))
                 fls+=pattern.findall(k)
-                fls+=patternB.findall(k)
+                #fls+=patternB.findall(k)
     tm.cprint('\t If equality Statements found','blue')
     tm.cprint('==='*30,'red')
     id=1
     for k in fls:
         k=k.replace(' ','').replace('\t','')
-        #k=k.strip()
         tm.cprint(str(id)+'.'+str(k),'green')
         id+=1
     print('\n\n')
-    return len(fls)  
+    return len(fls)    
 </code></pre></div>        </div>
       </li>
     </ul>
   </li><br><br>
   <li>For Loops με μέγεθος 12 χαρακτήρες<br /></li>
    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     
-     import sys
+import sys
 sys.path.append('..')
 import file_walk as fw 
 import re
@@ -186,17 +231,17 @@ def over_12_characters():
     found=0
     print(len(files))
     #for regex
-    pattern=re.compile('\s*for\s*\(\s*.*\s*;\s*.*\s*;\s*.*\s*\)|\s*for\s*\(\s*.+[:]\s*.+\s*\)')
+    pattern=re.compile('(\s*for\s*\(\s*\w*\s*[;]\s*\w*\s*[;]\s*\w*\s*\)|\s*for\s*\(\s*\w+\s*[:]\s*\w+\s*\))')
+    #pattern=re.compile('for\s*\(.*\s*;.*\s*;.*\s*\)|for\s*\(.+\s*:.+\s*\)')
     for x in files:
         with open(x,'r',encoding='ISO-8859-1') as f:
            for k in f:
-               for l in pattern.findall(k):
+               for l in list([u[0] for u in pattern.findall(k)]):
                    tm.cprint(l,'red')
                    current=l[int(l.find('('))+1:len(l)-1]
                    if len(current.replace(' ',''))>=12:
                          tm.cprint(current,'green')
                          found+=1
-                   print('')
     print(f'for loops with over 12 characters:{found}')
 
 #Test σε αρχείο sample.cpp
@@ -216,10 +261,11 @@ def tester():
 
 #Περίπτωση με εύρεση kαι inline εντολών for
 #split based for
-def tester1():
+def for_executor():
     found=0
     pattern=re.compile('\(.+;.+;.+\)|\(.+[:].+\)')
-    with open('sample.cpp','r') as f:
+    for x in files:
+      with open(x,'r',encoding='ISO-8859-9') as f:
         for x in f:
             data=[]
             if 'for' in x:
@@ -235,16 +281,19 @@ def tester1():
                        if len(fixed)>=12:
                            tm.cprint(len(fixed),'yellow')
                            tm.cprint(fixed,'green')
+                           print('\n\n')
                            found+=1
-               tm.cprint('============================================================','white') 
-        tm.cprint(f'Matches Found:{found}','blue')
+    tm.cprint('============================================================','white') 
+    tm.cprint(f'Matches Found:{found}','blue')
 
-over_12_characters()
+#over_12_characters()
 #tester()
-#tester1()
+for_executor()                    
+
    </code></pre></div>     </div>
   <li>Εύρεση 3 κοινών ονομάτων μεταβλητών</li>
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code>
        def CommonVars():
     commonvars=dict({})
     #Pattern for variables 
