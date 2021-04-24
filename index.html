@@ -116,7 +116,8 @@
      <img src="Images/1.png" width="100%" height="50%"><br><br>
   <li>Εύρεση Συμβόλων,Χαρακτήρων,Ψηφίων<br /></li>
      <div class="language-plaintext highlighter-rouge">
-      def Symbols_letters_Digits():
+       <div class="highlight"><pre class="highlight"><code>
+        def Symbols_letters_Digits():
     parser={'characters':0,'digits':0,'symbols':0}
     patternC=re.compile('[A-Za-z]')
     #\w
@@ -157,7 +158,6 @@
         tm.cprint(f'{x}-->{parser[x]}','green')
     tm.cprint('=='*30,'red')
     tm.cprint(f'Lapsed Time:{end_time-start_time} \'s','red')
-       <div class="highlight"><pre class="highlight"><code> 
      </code></pre></div>    </div>
      <br>
      <h2>ΑΠΟΤΕΛΕΣΜΑΤΑ</h2>
