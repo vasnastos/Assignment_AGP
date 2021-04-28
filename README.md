@@ -1,7 +1,6 @@
 Assignment_AGP(ΠΕΡΙΕΧΟΜΕΝΑ)
 
 ![Regex image](ReadMe_Sources/regex.jfif)
-<hr>
 
 ---
 
